@@ -35,7 +35,7 @@ export const getStaticPaths = async context => {
 
   client.close();
   return {
-    fallback: false, // if fallback is true, next.js will generate a page which we didnt have on the path.(let's say m3 in our case). But if its false it will redirect you a 404 page
+    fallback: "blocking", // if fallback is true, next.js will generate a page which we didnt have on the path.(let's say m3 in our case). But if its false it will redirect you a 404 page
 
     paths: meetups.map(meetup => ({
       params: { meetupId: meetup._id.toString() },
